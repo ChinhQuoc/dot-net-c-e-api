@@ -8,7 +8,7 @@ namespace WebApplication.Controllers
     {
         public IEnumerable<Employee> Get()
         {
-            using (EmployeeDBContext dbContext = new EmployeeDBContext())
+            using (EmployeeDBEntities dbContext = new EmployeeDBEntities())
             {
                 return dbContext.Employees.ToList();
             }
@@ -16,7 +16,7 @@ namespace WebApplication.Controllers
 
         public Employee Get(int id)
         {
-            using (EmployeeDBContext dbContext = new EmployeeDBContext())
+            using (EmployeeDBEntities dbContext = new EmployeeDBEntities())
             {
                 return dbContext.Employees.FirstOrDefault(e => e.ID == id);
             }
